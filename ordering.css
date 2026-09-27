@@ -1,0 +1,96 @@
+/* Container-first ordering; reuses the existing restrained CONINI palette. */
+.order-steps{display:flex;gap:22px;margin-bottom:16px;font-size:11px;color:var(--muted)}
+.order-steps .active{color:var(--wine);font-weight:600}
+.container-gate .page-title,.catalog-intro .page-title{font:500 23px/1.45 var(--sans);letter-spacing:0;margin:0 0 8px;text-wrap:balance}
+.container-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:25px}
+.container-choice{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);transition:border-color 180ms,background-color 180ms;min-width:0}
+.container-choice img{width:100%;height:auto;border-radius:15px}
+.container-photo{display:block;width:100%;aspect-ratio:800/390;overflow:hidden}
+.container-label{display:flex;flex-direction:column;align-items:center;padding:2px 5px 11px;line-height:1.6}
+.container-label strong{font-size:13px;font-weight:500}
+.container-label>span{font-size:11px}
+.container-label small{font-size:10px;color:var(--muted)}
+.container-choice.selected{border:2px solid var(--wine)}
+.container-choice.selected img{border-radius:14px}
+.container-check{position:absolute;top:9px;right:9px;width:20px;height:20px;border:1px solid #92968e;border-radius:50%;background:var(--bg);font:12px/18px var(--sans);text-align:center}
+.selected .container-check{border-color:var(--wine);background:var(--wine);color:var(--panel)}
+.depth-section{padding:24px 0 22px}
+.depth-heading{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:12px}
+.depth-heading h2{font-size:14px}
+.depth-heading>span{font-size:11px;color:var(--muted)}
+.depth-options{display:flex;gap:10px;align-items:center;min-height:46px}
+.depth-options button{border:1px solid var(--line);padding:10px 18px;min-height:46px;flex:1;border-radius:12px;font-size:13px}
+.depth-options button.active{color:var(--wine);background:var(--wine-soft);border-color:var(--wine)}
+.container-policy{font-size:11px;color:var(--muted);margin-top:15px}
+.selection-note{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.8}
+.current-container{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);padding:14px 16px;border-radius:16px;margin:18px 0 10px}
+.current-container>div{min-width:0}
+.container-caption{display:block;font-size:10px;color:var(--muted);margin-bottom:3px}
+.current-container strong{display:block;font-size:14px;font-weight:500;line-height:1.7}
+.current-container strong span{white-space:nowrap;font-size:12px}
+.current-container p{font-size:10px;color:var(--muted);margin-top:2px}
+.current-container .text-link{flex-shrink:0;white-space:nowrap}
+.catalog-disclaimer{font-size:10px;color:var(--muted);margin:0 0 16px}
+.catalog-intro{padding-top:18px}
+.catalog-intro .order-steps{margin-bottom:10px}
+.catalog-intro .page-title{font-size:21px;margin-bottom:4px}
+.catalog-intro .current-container{margin-top:12px;padding:10px 14px}
+.catalog-intro .catalog-disclaimer{margin-bottom:10px}
+.ordering-catalog{margin-top:14px;grid-template-columns:72px minmax(0,1fr)}
+.ordering-catalog .products{display:flex;flex-direction:column;gap:16px}
+.ordering-catalog .catalog-content{padding-left:12px;padding-right:12px}
+.ordering-catalog .category-rail{padding-left:4px}
+.ordering-catalog .category-rail button{font-size:12px}
+.order-product{--product-photo:128px;display:grid;grid-template-columns:var(--product-photo) minmax(0,1fr);gap:8px;align-items:start;border-bottom:1px solid var(--line);border-radius:0;padding-bottom:16px}
+/* Definite square dimensions and an in-flow image also work in mobile WebViews. */
+.order-product .product-image{display:block;position:relative;align-self:start;width:var(--product-photo);height:var(--product-photo);aspect-ratio:1;border-radius:14px;padding:0}
+.order-product .product-image img{display:block;position:static;width:100%;height:100%;object-fit:cover}
+.order-product .product-copy{min-width:0;display:flex;flex-direction:column;gap:4px}
+.order-product .product-heading{display:flex;align-items:flex-start;gap:4px}
+.order-product .product-label{min-height:0;padding:0}
+.order-product .product-heading .product-label{flex:1;min-width:0}
+.catalog-content .order-product .product-label h3{font-size:15px;line-height:1.4;font-weight:500;text-wrap:pretty;overflow-wrap:anywhere}
+.order-product .product-en{font-size:9px;line-height:1.35;white-space:normal;overflow:visible;overflow-wrap:anywhere;margin-top:2px;letter-spacing:0}
+.order-product .product-purchase{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 4px;margin-top:0}
+.order-product .product-specs{min-width:0}
+.order-product .product-meta{font-size:11px;margin-top:0;color:var(--ink);line-height:1.5}
+.unit-price{font-size:10px;color:var(--muted);margin-top:2px;white-space:nowrap}
+.order-product .ingredient-copy{min-width:0;font-size:11px;color:var(--muted);line-height:1.4;overflow-wrap:anywhere}
+.order-product .ingredient-copy>span{color:var(--ink);margin-right:3px}
+.order-product .ingredient-copy>small{display:block;font-size:10px;line-height:1.4;margin-top:2px}
+.order-product .price-row{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;flex:none;gap:0;min-height:0;white-space:nowrap}
+.price-caption{display:block;color:var(--muted);font-size:10px;line-height:1.4;margin-bottom:3px}
+.order-product .price-row .price{font-weight:500;font-size:20px;line-height:1.15;color:var(--wine);letter-spacing:0}
+.order-product .price-caption{margin-bottom:1px}
+.order-product .product-actions{display:flex;justify-content:flex-end;align-items:center;min-height:44px;margin-left:auto}
+.line-control{flex-shrink:0}
+.line-control .quantity{background:var(--surface);padding:0;border-radius:12px}
+.line-control .quantity button{border:0;width:44px;height:44px;font-size:18px;color:var(--wine);border-radius:12px}
+.line-control .quantity input{width:28px;height:44px;font-size:13px;font-variant-numeric:tabular-nums}
+.line-control .plus{width:44px;height:44px}
+.line-control .plus span{width:32px;height:32px;font-size:22px}
+.order-detail-product .current-container{margin:0 0 20px}
+.order-detail-product .detail-facts{margin:24px 0 10px}
+.order-detail-product .detail-facts>div{gap:16px;align-items:baseline}
+.order-detail-product .detail-facts span{flex-shrink:0}
+.order-detail-product .detail-facts strong{font-weight:500;text-align:right}
+.ingredient-notice{font-size:11px;color:var(--muted);line-height:1.8;margin:12px 0 22px}
+.detail-purchase{display:flex;align-items:center;justify-content:space-between;padding:16px 0;margin:10px 0}
+.detail-purchase .price{color:var(--wine);font-size:28px;font-weight:500}
+.detail-purchase>div>small{display:block;color:var(--muted);font-size:10px}
+.line-container{font-size:11px;color:var(--ink);margin:4px 0 2px}
+.line-subtotal{font-size:11px;color:var(--muted);margin-top:8px;text-align:right}
+.cart-item-foot{flex-wrap:wrap;gap:8px}
+.cart-item .price{font-size:17px}
+.reorder-lines{margin:18px 0 24px}
+.reorder-lines>div{padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
+.reorder-lines strong{font-weight:500;font-size:14px}
+.reorder-lines p{margin-top:4px}
+.reorder-hint{font-size:12px;color:var(--wine);margin-top:16px}
+.sheet #containerPicker .container-grid{margin-top:14px}
+@media(min-width:414px){.order-product{--product-photo:140px}}
+@media(min-width:460px){.ordering-catalog{grid-template-columns:82px minmax(0,1fr)}.ordering-catalog .catalog-content{padding-left:14px;padding-right:20px}.order-product{--product-photo:148px;column-gap:12px}.order-product .product-meta{font-size:12px}.unit-price{font-size:11px}}
+@media(max-width:459px){.order-product .spec-prefix{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.order-product .product-meta{white-space:nowrap}.order-product .unit-price{font-size:11px}}
+@media(max-width:360px){.container-gate,.catalog-intro{padding-left:16px;padding-right:16px}.container-grid{gap:9px}.container-gate .page-title,.catalog-intro .page-title{font-size:21px}.current-container{padding:12px}.current-container strong{font-size:13px}.current-container strong span{font-size:11px}.current-container p{font-size:9px}.ordering-catalog{grid-template-columns:64px minmax(0,1fr)}.ordering-catalog .catalog-content{padding-left:10px;padding-right:10px}.ordering-catalog .category-rail button{font-size:11px}.order-product{--product-photo:112px}.catalog-content .order-product .product-label h3{font-size:14px}.order-product .price-row .price{font-size:18px}}
+@media(max-width:339px){.order-product{--product-photo:96px}}
+@media(prefers-reduced-motion:reduce){.container-choice{transition:none}}

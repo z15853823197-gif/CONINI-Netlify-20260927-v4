@@ -1,0 +1,58 @@
+/* Adapted from the user's CONINI-welcome-motion-demo/variant-2.html.
+   All styling is scoped to the welcome dialog; the rest of the app is unchanged. */
+#welcome.welcome-motion{--wm-ease-out:cubic-bezier(.22,1,.36,1);--wm-ease-expo:cubic-bezier(.16,1,.3,1);color-scheme:dark;color:#fff;background:#050505;width:100%;max-width:520px;height:100svh;max-height:100svh;padding:0;border:0;margin:0 auto;top:0;bottom:auto;overflow:hidden;animation:none;font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif}
+#welcome.welcome-motion::backdrop{background:#050505}
+/* The dialog is a focus landing point, not a control. Buttons retain visible focus. */
+#welcome.welcome-motion:focus{outline:none}
+#welcome .wm-viewport{display:grid;place-items:center;height:100%;overflow:hidden;background:#050505}
+#welcome .wm-stage{position:relative;width:min(100%,600px,56.04svh);aspect-ratio:3066/5471;overflow:hidden;isolation:isolate;background:#000;container-type:inline-size}
+#welcome .wm-scene{position:absolute;inset:0;z-index:0}
+#welcome .wm-art{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:fill;border-radius:0}
+#welcome .wm-logo-curtain{position:absolute;z-index:1;right:0;bottom:0;width:22%;height:11.5%;background:#000}
+#welcome .wm-print-field{position:absolute;z-index:1;top:54.8%;left:4%;width:92%;height:12.5%;pointer-events:none;opacity:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.09) 48%,transparent);transform:translateX(-65%);mix-blend-mode:screen}
+#welcome .is-playing .wm-print-field{animation:wm-print-pass 930ms var(--wm-ease-expo) 430ms both}
+#welcome .wm-copy{position:absolute;z-index:2;left:3%;width:94%;text-align:center;text-shadow:0 2px 18px #000d;pointer-events:none}
+#welcome .wm-tagline{top:55.2%}
+#welcome .wm-tagline h1{display:flex;justify-content:center;gap:clamp(8px,2svh,24px);margin:0;color:#fff;font-family:'Songti SC','Noto Serif CJK SC',SimSun,serif;font-size:clamp(25px,3.75svh,44px);font-weight:600;line-height:1.35;white-space:nowrap}
+#welcome .wm-title-word{display:inline-flex;overflow:hidden;transform-origin:left center}
+#welcome .wm-title-word span{display:inline-block}
+#welcome .wm-tagline p{margin:2.2% 0 0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(10px,1.42svh,17px);font-weight:600;line-height:1.5;white-space:nowrap}
+#welcome .wm-company{top:84.3%;left:0;width:100%;margin:0;font-size:clamp(10px,1.5svh,15px);line-height:1.4}
+#welcome .is-playing .wm-title-word{animation:wm-ink-word 720ms var(--wm-ease-out) both}
+#welcome .is-playing .wm-title-word:first-child{animation-delay:520ms}
+#welcome .is-playing .wm-title-word:last-child{animation-delay:790ms}
+#welcome .is-playing .wm-title-word span{animation:wm-letter-press 640ms var(--wm-ease-out) both}
+#welcome .is-playing .wm-title-word:first-child span:nth-child(2){animation-delay:80ms}
+#welcome .is-playing .wm-title-word:first-child span:nth-child(3){animation-delay:125ms}
+#welcome .is-playing .wm-title-word:first-child span:nth-child(4){animation-delay:170ms}
+#welcome .is-playing .wm-title-word:last-child span:nth-child(2){animation-delay:75ms}
+#welcome .is-playing .wm-title-word:last-child span:nth-child(3){animation-delay:120ms}
+#welcome .is-playing .wm-title-word:last-child span:nth-child(4){animation-delay:165ms}
+#welcome .is-playing .wm-tagline p{animation:wm-ink-line 660ms var(--wm-ease-out) 1210ms both}
+#welcome .is-playing .wm-company{animation:wm-ink-line 660ms var(--wm-ease-out) 1770ms both}
+#welcome .wm-brand-entry{position:absolute;z-index:3;right:3.8%;bottom:2.6%;display:grid;place-items:center;width:clamp(57px,10.5%,90px);aspect-ratio:556.26/665.73;padding:0;border:0;border-radius:0;color:#fff;background:transparent;filter:drop-shadow(0 3px 12px rgba(0,0,0,.55));cursor:pointer;-webkit-tap-highlight-color:transparent}
+#welcome .wm-brand-entry img{display:block;width:100%;height:100%;object-fit:contain;border-radius:0;filter:brightness(0) invert(1)}
+#welcome .is-playing .wm-brand-entry{animation:wm-logo-arrive 550ms var(--wm-ease-out) 2440ms both}
+#welcome .wm-brand-entry:focus-visible{outline:2px solid #fff;outline-offset:5px;animation:none!important;opacity:1;transform:none}
+#welcome .wm-control{position:absolute;z-index:4;top:2.5%;min-height:44px;min-width:44px;padding:6px 9px;border:1px solid #fff6;border-radius:10px;color:#fff;background:#0007;font-size:11px;cursor:pointer;transition:background-color 180ms ease}
+#welcome .wm-close{right:3.5%;font-size:24px;line-height:1}
+#welcome .wm-control:focus-visible{outline:2px solid #fff;outline-offset:3px}
+#welcome .is-exiting .wm-scene{animation:wm-enter-the-arch 920ms cubic-bezier(.65,0,.25,1) both}
+#welcome .is-exiting .wm-tagline,#welcome .is-exiting .wm-company,#welcome .is-exiting .wm-brand-entry{animation:wm-exit-copy 250ms ease-out both}
+#welcome .is-exiting::after{content:'';position:absolute;z-index:5;inset:0;background:#000;animation:wm-fade-to-black 920ms ease-in both;pointer-events:none}
+#welcome .is-exiting .wm-close{z-index:6}
+html:has(#welcome[open]){overflow:hidden}
+@keyframes wm-print-pass{0%{opacity:0;transform:translateX(-65%)}18%{opacity:.75}68%{opacity:.35}100%{opacity:0;transform:translateX(65%)}}
+@keyframes wm-ink-word{0%{opacity:0;clip-path:inset(0 100% 0 0);transform:translateY(-1px) scaleX(.92)}35%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0);transform:translateY(0) scaleX(1)}}
+@keyframes wm-letter-press{0%{opacity:0;transform:translateY(-2px);filter:blur(2px)}52%{opacity:1}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes wm-ink-line{0%{opacity:0;clip-path:inset(0 100% 0 0);transform:translateY(1px)}38%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0);transform:translateY(0)}}
+@keyframes wm-logo-arrive{from{opacity:0;transform:translateY(9px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes wm-exit-copy{from{opacity:1}to{opacity:0}}
+@keyframes wm-enter-the-arch{from{transform:scale(1);filter:brightness(1)}to{transform:scale(1.48);filter:brightness(.36)}}
+@keyframes wm-fade-to-black{0%,44%{opacity:0}100%{opacity:1}}
+@media(hover:hover){#welcome .wm-control:hover{background:#70252c}#welcome .wm-brand-entry:hover{filter:drop-shadow(0 4px 18px rgba(255,255,255,.2))}}
+@media(min-width:1000px){#welcome.welcome-motion{margin-left:calc(50% + 30px)}}
+@media(max-width:360px){#welcome .wm-tagline h1{font-size:25px}#welcome .wm-tagline p{font-size:10px}#welcome .wm-brand-entry{right:3%;bottom:2.7%;width:57px}}
+/* Preserve the composition on short/landscape screens without clipping copy. */
+@media(max-height:550px){#welcome .wm-tagline h1{font-size:7.4cqw;gap:3cqw}#welcome .wm-tagline p{font-size:2.8cqw}#welcome .wm-company{font-size:3.2cqw}#welcome .wm-brand-entry{width:max(44px,10.5%)}#welcome .wm-control{top:1%;padding:4px}}
+@media(prefers-reduced-motion:reduce){#welcome *,#welcome *::before,#welcome *::after{animation:none!important;transition:none!important}#welcome .wm-title-word,#welcome .wm-title-word span,#welcome .wm-tagline p,#welcome .wm-company,#welcome .wm-brand-entry{opacity:1!important;clip-path:none!important;transform:none!important;filter:none!important}#welcome .wm-print-field{opacity:0!important}}
