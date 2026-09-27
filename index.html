@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e9e9e7">
+  <meta name="description" content="CONINI · 北京可尼尼食品有限公司，面向餐饮门店的 Gelato 订货体验原型。">
+  <title>CONINI · 风味与日常</title>
+  <link rel="icon" href="./assets/conini-mark.jpg">
+  <!-- Keep this revision in sync across assets when updating the static demo. -->
+  <link rel="stylesheet" href="./styles.css?v=20260927-mobile-layout-2">
+  <link rel="stylesheet" href="./polish.css?v=20260927-mobile-layout-2">
+  <link rel="stylesheet" href="./flavor-gallery.css?v=20260927-mobile-layout-2">
+  <link rel="stylesheet" href="./ordering.css?v=20260927-mobile-layout-2">
+  <link rel="stylesheet" href="./wallet.css?v=20260927-mobile-layout-2">
+  <link rel="stylesheet" href="./welcome-motion.css?v=20260927-mobile-layout-2">
+  <script src="./data.js?v=20260927-mobile-layout-2" defer></script>
+  <script src="./ordering.js?v=20260927-mobile-layout-2" defer></script>
+  <script src="./carousel.js?v=20260927-mobile-layout-2" defer></script>
+  <script src="./flavor-gallery.js?v=20260927-mobile-layout-2" defer></script>
+  <script src="./wallet.js?v=20260927-mobile-layout-2" defer></script>
+  <script src="./welcome-motion.js?v=20260927-mobile-layout-2" defer></script>
+  <script src="./app.js?v=20260927-mobile-layout-2" defer></script>
+</head>
+<body>
+  <aside class="desktop-note" aria-hidden="true"><span class="eyebrow">CONINI / PARTNER EXPERIENCE</span><h1>好风味，<br>成为日常。</h1><p>秉承传统，坚持手作。<br>为每一间店，带来值得分享的 Gelato。</p><div class="desktop-rule"></div><span class="desktop-foot">北京可尼尼食品有限公司<br><small>移动端交互原型 · 价格及交易均为演示</small></span></aside>
+  <div class="app-shell">
+    <header id="header" class="app-header"></header>
+    <main id="main" tabindex="-1"></main>
+    <div id="cartDock"></div>
+    <nav id="bottomNav" class="bottom-nav" aria-label="主导航"></nav>
+  </div>
+  <dialog id="welcome" class="welcome welcome-motion" aria-label="CONINI 品牌欢迎页" tabindex="-1">
+    <div class="wm-viewport">
+      <section class="wm-stage" aria-label="CONINI 手作印字欢迎动画">
+        <div class="wm-scene" aria-hidden="true"><img class="wm-art" src="./assets/welcome-archway-v2.webp" alt="" width="1533" height="2736" fetchpriority="high"></div>
+        <div class="wm-logo-curtain" aria-hidden="true"></div>
+        <div class="wm-print-field" aria-hidden="true"></div>
+        <div class="wm-copy wm-tagline">
+          <h1 aria-label="秉承传统，坚持手作。"><span class="wm-title-word" aria-hidden="true"><span>秉</span><span>承</span><span>传</span><span>统</span></span><span class="wm-title-word" aria-hidden="true"><span>坚</span><span>持</span><span>手</span><span>作</span></span></h1>
+          <p lang="it">Fedeli alla tradizione, lavoriamo sempre a mano</p>
+        </div>
+        <p class="wm-copy wm-company">北京可尼尼食品有限公司</p>
+        <button class="wm-brand-entry" type="button" aria-label="进入首页" title="点击 CONINI Logo 进入首页"><img src="./assets/welcome-logo-v2.svg" alt="CONINI" width="556" height="666"></button>
+        <button class="wm-control wm-close" type="button" aria-label="关闭欢迎页" title="关闭欢迎页">×</button>
+      </section>
+    </div>
+  </dialog>
+  <dialog id="modal" class="sheet" aria-labelledby="modalTitle"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>请启用 JavaScript 体验选品与下单。北京可尼尼食品有限公司。</noscript>
+</body>
+</html>
+
